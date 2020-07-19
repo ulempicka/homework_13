@@ -1,0 +1,7 @@
+Wczytaj
+wszystkie
+słowa
+z
+pliku
+do
+listy
