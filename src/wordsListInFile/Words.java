@@ -1,25 +1,16 @@
 package wordsListInFile;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Words {
     public static void main(String[] args) {
         String fileName = "src\\wordsListInFile\\words.txt";
-        ArrayList<String> words = new ArrayList<>();
+        List<String> words = new ArrayList<>();
 
-        try (
-                var fileReader = new FileReader(fileName);
-                var reader = new BufferedReader(fileReader)
-        ) {
-            int i = 0;
-            String nextLine = "";
-            while ((nextLine = reader.readLine()) != null) {
-                words.add(nextLine);
-                i++;
-            }
+        try {
+            words = WordsGenerator.generateWords(fileName);
             System.out.println(words);
         } catch (IOException e) {
             System.err.println("nie mozna odczytac pliku");
@@ -32,7 +23,6 @@ public class Words {
 
         System.out.println("Najdluzszy wyraz ma: " + WordsUtils.maxCharCount(words) + " znakow");
         System.out.println("Najkrotszy wyraz to: " + WordsUtils.maxWord(words));
-
     }
 
 }
