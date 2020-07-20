@@ -1,6 +1,6 @@
 package wordsListInFile;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class WordsUtils {
 
@@ -9,7 +9,7 @@ public class WordsUtils {
         return letters.length;
     }
 
-    public static int minCharCount(ArrayList<String> words) {
+    public static int minCharCount(List<String> words) {
         int minCount = charCount(words.get(0));
         for (String word : words) {
             if (charCount(word) < minCount) {
@@ -19,7 +19,7 @@ public class WordsUtils {
         return minCount;
     }
 
-    public static String minWord(ArrayList<String> words){
+    public static String minWord(List<String> words){
         String minCharWord = words.get(0);
         int minCount = minCharCount(words);
         for (String word : words) {
@@ -30,7 +30,7 @@ public class WordsUtils {
         return minCharWord;
     }
 
-    public static int maxCharCount(ArrayList<String> words) {
+    public static int maxCharCount(List<String> words) {
         int maxCount = charCount(words.get(0));
         for (String word : words) {
             if (charCount(word) > maxCount) {
@@ -40,7 +40,7 @@ public class WordsUtils {
         return maxCount;
     }
 
-    public static String maxWord(ArrayList<String> words){
+    public static String maxWord(List<String> words){
         String maxCharWord = words.get(0);
         int maxCount = maxCharCount(words);
         for (String word : words) {
@@ -51,7 +51,7 @@ public class WordsUtils {
         return maxCharWord;
     }
 
-    public static int sumCount(ArrayList<String> words) {
+    public static int sumCount(List<String> words) {
         int sum = 0;
         for (String word : words) {
             sum += charCount(word);

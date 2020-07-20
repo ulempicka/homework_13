@@ -1,16 +1,16 @@
 package sumPositiveNumbers;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class NumbersUtils {
 
-    public static void displayReverse(LinkedList<Integer> numbers) {
+    public static void displayReverse(List<Integer> numbers) {
         for (int i = numbers.size() - 1; i >= 0; i--) {
             System.out.println(numbers.get(i));
         }
     }
 
-    public static int sum(LinkedList<Integer> numbers) {
+    public static int sum(List<Integer> numbers) {
         int sum = 0;
         for (int i = 0; i < numbers.size(); i++) {
             sum += numbers.get(i);
@@ -18,7 +18,7 @@ public class NumbersUtils {
         return sum;
     }
 
-    public static int minNumber(LinkedList<Integer> numbers) {
+    public static int minNumber(List<Integer> numbers) {
         int min = numbers.get(0);
         for (int i = 0; i < numbers.size(); i++) {
             if (numbers.get(i) < min) {
@@ -28,10 +28,10 @@ public class NumbersUtils {
         return min;
     }
 
-    public static int maxNumber(LinkedList<Integer> numbers) {
+    public static int maxNumber(List<Integer> numbers) {
         int max = numbers.get(0);
         for (int i = 0; i < numbers.size(); i++) {
-            if(numbers.get(i) > max){
+            if (numbers.get(i) > max) {
                 max = numbers.get(i);
             }
         }
