@@ -18,31 +18,14 @@ public class Numbers {
         numbers.removeLast();
         System.out.println(numbers);
 
-        for(int i = numbers.size()-1; i >= 0; i--) {
-            System.out.println(numbers.get(i));
-        }
-
-        int sum = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            sum += numbers.get(i);
-        }
-
+        NumbersUtils.displayReverse(numbers);
+        int sum = NumbersUtils.sum(numbers);
         System.out.println("suma = " + sum);
 
-        int min = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++) {
-            if(numbers.get(i) < min){
-                min = numbers.get(i);
-            }
-        }
+        int min = NumbersUtils.minNumber(numbers);
         System.out.println("min = " + min);
 
-        int max = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            if(numbers.get(i) > max){
-                max = numbers.get(i);
-            }
-        }
+        int max = NumbersUtils.maxNumber(numbers);
         System.out.println("max = " + max);
     }
 }

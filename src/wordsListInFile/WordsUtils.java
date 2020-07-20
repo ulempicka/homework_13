@@ -31,7 +31,7 @@ public class WordsUtils {
     }
 
     public static int maxCharCount(ArrayList<String> words) {
-        int maxCount = 0;
+        int maxCount = charCount(words.get(0));
         for (String word : words) {
             if (charCount(word) > maxCount) {
                 maxCount = charCount(word);
